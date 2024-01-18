@@ -18,3 +18,6 @@ TextStyle greyTextStyle = GoogleFonts.poppins(
 TextStyle whiteTextStyle = GoogleFonts.poppins(
   color: Colors.white
 );
+TextStyle regularTextStyle = GoogleFonts.poppins(
+  color: Colors.black
+);
