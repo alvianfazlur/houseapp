@@ -15,6 +15,9 @@ TextStyle greyTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w300,
   color: greyColor
 );
+TextStyle purpleTextStyle = GoogleFonts.poppins(
+  color: purpleColor
+);
 TextStyle whiteTextStyle = GoogleFonts.poppins(
   color: Colors.white
 );

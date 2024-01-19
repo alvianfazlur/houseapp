@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:houseapp/home/favorite_card.dart';
+import 'package:houseapp/home/home_screen_controller.dart';
+import 'package:houseapp/home/user_section/user_list.dart';
 import 'package:houseapp/theme.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView<HomeScreenController> {
   const HomeScreen({Key? key}) : super(key: key);
   static const routeName = '/home';
 
@@ -10,32 +13,55 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.only(top: 30, left: 20),
-        child: ListView(
-          children: [
-            Text(
-              "Dashboard Utama",
-              style: regularTextStyle.copyWith(
-                  fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Text(
-              "Menu Cepat",
-              style: regularTextStyle.copyWith(
-                  fontSize: 18, fontWeight: FontWeight.w400),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 30, left: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Dashboard Utama",
+                style: regularTextStyle.copyWith(
+                    fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Menu Cepat",
+                style: regularTextStyle.copyWith(
+                    fontSize: 18, fontWeight: FontWeight.w400),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
                 height: 150,
-                child: FavoriteCard()
-            )],
+                child: FavoriteCard(),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Penghuni Kos",
+                style: regularTextStyle.copyWith(
+                    fontSize: 18, fontWeight: FontWeight.w400),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height - 260,
+                    child: UserList(),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }
+

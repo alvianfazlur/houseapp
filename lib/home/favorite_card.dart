@@ -38,6 +38,62 @@ class FavoriteCard extends StatelessWidget {
           ),
         ),
         SizedBox(width: 30),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+          child: InkWell(
+            onTap: () {
+
+            },
+            child: Container(
+              height: 150,
+              width: 120,
+              color: CupertinoColors.systemGrey6,
+              child: Column(
+                children: [
+                  Image.asset(
+                    "assets/images/gedung.png",
+                    width: 120,
+                    height: 102,
+                    fit: BoxFit.cover,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text("Tambah Penghuni"),
+                ],
+              ),
+            ),
+          ),
+        ),
+        SizedBox(width: 30),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+          child: InkWell(
+            onTap: () {
+
+            },
+            child: Container(
+              height: 150,
+              width: 120,
+              color: CupertinoColors.systemGrey6,
+              child: Column(
+                children: [
+                  Image.asset(
+                    "assets/images/gedung.png",
+                    width: 120,
+                    height: 102,
+                    fit: BoxFit.cover,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text("Daftar Kamar"),
+                ],
+              ),
+            ),
+          ),
+        ),
+        SizedBox(width: 30),
       ],
     );
   }
