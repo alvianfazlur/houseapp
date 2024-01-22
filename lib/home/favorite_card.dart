@@ -31,7 +31,7 @@ class FavoriteCard extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Text("Daftar Penghuni"),
+                  Text("Tambah Penghuni"),
                 ],
               ),
             ),
@@ -59,7 +59,7 @@ class FavoriteCard extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Text("Tambah Penghuni"),
+                  Text("Daftar Penghuni"),
                 ],
               ),
             ),
