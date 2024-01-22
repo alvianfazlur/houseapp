@@ -25,7 +25,7 @@ var appPages = [
   ),
   GetPage(
     name: UserScreen.routeName,
-    page: () => const UserScreen(),
+    page: () => UserScreen(),
     transition: Transition.cupertino,
     curve: Curves.easeInOut,
     transitionDuration: const Duration(milliseconds: 250),

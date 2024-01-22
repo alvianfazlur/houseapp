@@ -9,16 +9,21 @@ class UserList extends GetView<HomeScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.vertical,
-      itemCount: controller.displayUser.length,
-      itemBuilder: (context,index) {
-        var user = controller.displayUser[index];
-        return  UserCard(
-          user : user,
-          index : index
-        );
-      },
+    return GetBuilder<HomeScreenController>(
+      builder: (controller) => ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: controller.displayUser.length,
+        itemBuilder: (context,index) {
+          var user = controller.displayUser[index];
+          return  UserCard(
+            user : user,
+            index : index,
+            onDeletePressed: () {
+              controller.deleteUser(index);
+            },
+          );
+        },
+      ),
     );
   }
 }

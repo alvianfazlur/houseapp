@@ -39,4 +39,8 @@ class HomeScreenController extends GetxController{
     typeController.clear();
     Get.toNamed(HomeScreen.routeName);
   }
+  void deleteUser(int index) {
+    displayUser.removeAt(index);
+    update();
+  }
 }
