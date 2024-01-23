@@ -13,8 +13,9 @@ class HomeScreen extends GetView<HomeScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: Padding(
-          padding: const EdgeInsets.only(top: 30, left: 20),
+          padding: const EdgeInsets.only(top: 30, left: 20, right: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -52,7 +53,7 @@ class HomeScreen extends GetView<HomeScreenController> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
-                    height: MediaQuery.of(context).size.height - 260,
+                    height: MediaQuery.of(context).size.height-400,
                     child: UserList(),
                   ),
                 ),

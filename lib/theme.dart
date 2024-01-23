@@ -11,6 +11,11 @@ TextStyle blackTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w500,
   color: blackColor
 );
+TextStyle titleTextStyle = GoogleFonts.poppins(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: blackColor
+);
 TextStyle greyTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w300,
   color: greyColor

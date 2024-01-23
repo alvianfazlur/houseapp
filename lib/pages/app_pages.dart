@@ -1,11 +1,12 @@
 import 'package:flutter/animation.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
+import 'package:houseapp/detail_user/detail_user.dart';
+import 'package:houseapp/detail_user/detail_user_binding.dart';
 import 'package:houseapp/home/home_screen.dart';
 import 'package:houseapp/home/home_screen_binding.dart';
 import 'package:houseapp/splash/splash_screen.dart';
-
-import '../detail/user.dart';
+import 'package:houseapp/add_user/user.dart';
 
 var appPages = [
   GetPage(
@@ -26,6 +27,14 @@ var appPages = [
   GetPage(
     name: UserScreen.routeName,
     page: () => UserScreen(),
+    transition: Transition.cupertino,
+    curve: Curves.easeInOut,
+    transitionDuration: const Duration(milliseconds: 250),
+  ),
+  GetPage(
+    name: DetailUserScreen.routeName,
+    page: () => DetailUserScreen(),
+    binding: DetailUserBinding(),
     transition: Transition.cupertino,
     curve: Curves.easeInOut,
     transitionDuration: const Duration(milliseconds: 250),

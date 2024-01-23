@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../detail/user.dart';
+import 'package:houseapp/add_user/user.dart';
 
 class FavoriteCard extends StatelessWidget {
 
