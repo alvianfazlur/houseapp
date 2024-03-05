@@ -39,7 +39,7 @@ class SplashScreen extends StatelessWidget {
                       SizedBox(
                         height: 30,
                       ),
-                      Text("Sebuah Aplikasi\nManajemen Ruangan",
+                      Text("Sebuah Aplikasi\nManajemen Kegiatan",
                         style: blackTextStyle.copyWith(
                           fontSize: 24
                         ),
@@ -47,7 +47,7 @@ class SplashScreen extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text("Kemudahan Manajemen\nDalam genggaman",
+                      Text("Kemudahan Pencatatan Kegiatan\nDalam Genggaman",
                       style: greyTextStyle.copyWith(fontSize: 16),
                       ),
                       SizedBox(

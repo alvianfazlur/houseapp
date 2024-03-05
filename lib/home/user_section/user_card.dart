@@ -1,27 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:houseapp/data/user_data.dart';
-import 'package:houseapp/detail_user/detail_user.dart';
-
+import '../../data/events.dart';
 import '../../theme.dart';
 
-class UserCard extends StatelessWidget {
-  const UserCard({
+class EventCard extends StatelessWidget {
+  const EventCard({
     Key? key,
-    required this.user,
+    required this.event,
     required this.index,
-    required this.onDeletePressed,
   }) : super(key: key);
 
-  final UserData user;
+  final EventModel event;
   final int index;
-  final VoidCallback onDeletePressed;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Get.toNamed(DetailUserScreen.routeName, arguments: {'user': user, 'index': index});
+
       },
       child: Column(
         children: [
@@ -49,36 +44,35 @@ class UserCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            user.name,
+                            event.title,
                             style:
                             regularTextStyle.copyWith(fontWeight: FontWeight.bold),
                           ),
-                          Row(
-                            children: [
-                              Text(user.type, style: purpleTextStyle),
-                              Text(user.number, style: greyTextStyle),
-                            ],
+                          Text(
+                            "${event.date}",
+                            style:
+                            regularTextStyle.copyWith(fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
                     ],
                   ),
-                  Positioned(
-                    top: 0,
-                    bottom: 0,
-                    right: 0,
-                    child: GestureDetector(
-                      onTap: onDeletePressed,
-                      child: Container(
-                        width: 50,
-                        color: Colors.red,
-                        child: Icon(
-                          Icons.delete,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Positioned(
+                  //   top: 0,
+                  //   bottom: 0,
+                  //   right: 0,
+                  //   child: GestureDetector(
+                  //     onTap: onDeletePressed,
+                  //     child: Container(
+                  //       width: 50,
+                  //       color: Colors.red,
+                  //       child: Icon(
+                  //         Icons.delete,
+                  //         color: Colors.white,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),

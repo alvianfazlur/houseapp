@@ -1,6 +1,8 @@
+// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:houseapp/home/favorite_card.dart';
+import 'package:houseapp/home/add_plan.dart';
 import 'package:houseapp/home/home_screen_controller.dart';
 import 'package:houseapp/home/user_section/user_list.dart';
 import 'package:houseapp/theme.dart';
@@ -28,7 +30,7 @@ class HomeScreen extends GetView<HomeScreenController> {
                 height: 30,
               ),
               Text(
-                "Menu Cepat",
+                "Tambah Planner",
                 style: regularTextStyle.copyWith(
                     fontSize: 18, fontWeight: FontWeight.w400),
               ),
@@ -37,13 +39,13 @@ class HomeScreen extends GetView<HomeScreenController> {
               ),
               Container(
                 height: 150,
-                child: FavoriteCard(),
+                child: AddPlan(),
               ),
               SizedBox(
                 height: 30,
               ),
               Text(
-                "Penghuni Kos",
+                "Daftar To-Do-List",
                 style: regularTextStyle.copyWith(
                     fontSize: 18, fontWeight: FontWeight.w400),
               ),
@@ -54,7 +56,7 @@ class HomeScreen extends GetView<HomeScreenController> {
                 child: SingleChildScrollView(
                   child: Container(
                     height: MediaQuery.of(context).size.height-400,
-                    child: UserList(),
+                    child: EventList(),
                   ),
                 ),
               ),
