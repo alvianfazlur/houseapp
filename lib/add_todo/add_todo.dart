@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:houseapp/add_todo/add_todo_controller.dart';
 import 'package:houseapp/add_todo/widgets/input_section.dart';
-import 'package:houseapp/add_todo/widgets/meeting_data_Source.dart';
+import 'package:houseapp/home/meeting_data_Source.dart';
 import 'package:houseapp/theme.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
@@ -41,9 +41,8 @@ class AddTodo extends GetView<AddTodoController> {
                       if (details.targetElement ==
                           CalendarElement.calendarCell) {
                         DateTime selectedDate = details.date!;
-                        String formattedDate =
-                            "${selectedDate.day}-${selectedDate.month}-${selectedDate.year}";
-                        await controller.fetchDate(formattedDate);
+                        print(selectedDate);
+                        await controller.fetchDate(selectedDate.toIso8601String());
                         Get.dialog(
                           AlertDialog(
                             title: Text(
@@ -81,7 +80,7 @@ class AddTodo extends GetView<AddTodoController> {
                                     ElevatedButton(
                                       onPressed: () {
                                         if(controller.titleController.text.isNotEmpty && controller.tagController.text.isNotEmpty){
-                                          controller.addEvent(formattedDate);
+                                          controller.addEvent(selectedDate.toIso8601String());
                                         }
                                       },
                                       child: Text('Add Todo'),

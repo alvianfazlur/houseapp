@@ -8,11 +8,14 @@ import 'package:houseapp/data/events.dart';
 import 'package:houseapp/home/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../data/meeting.dart';
+
 class HomeScreenController extends GetxController{
 
   late SharedPreferences prefs;
   final List<EventModel> eventList = [];
   List<EventModel> displayEvent = [];
+  DateTime? date;
   TextEditingController nameController = TextEditingController();
   TextEditingController numberController = TextEditingController();
   TextEditingController typeController = TextEditingController();
@@ -33,34 +36,18 @@ class HomeScreenController extends GetxController{
     update();
   }
 
-  // void updateUser(int index, String newName, String newNumber, String newType) async {
-  //   String name = newName;
-  //   String number = newNumber;
-  //   String type = newType;
-  //
-  //   UserData updatedUser = UserData(name: name, number: number, type: type);
-  //   userList[index] = updatedUser;
-  //
-  //   await saveUsers();
-  //
-  //   Get.snackbar(
-  //     'User Updated',
-  //     'User has been updated successfully!',
-  //     backgroundColor: Colors.green,
-  //     colorText: Colors.white,
-  //     snackPosition: SnackPosition.TOP,
-  //     duration: const Duration(seconds: 3),
-  //   );
-  //
-  //   nameController.clear();
-  //   numberController.clear();
-  //   typeController.clear();
-  //   Get.offNamed(HomeScreen.routeName);
-  // }
-  //
-  // void deleteUser(int index) async{
-  //   displayUser.removeAt(index);
-  //   await saveUsers();
-  //   update();
-  // }
+  List<Meeting> getDataSource() {
+    final List<Meeting> meetings = [];
+
+    final DateTime today = DateTime.now();
+
+    displayEvent.forEach((event) {
+      DateTime date = DateTime.parse(event.date);
+      Color backgroundColor = date.isBefore(today) ? Colors.red : const Color(0xFF0F8644);
+      meetings.add(Meeting(event.title, date, backgroundColor, true));
+    });
+
+    return meetings;
+  }
+
 }

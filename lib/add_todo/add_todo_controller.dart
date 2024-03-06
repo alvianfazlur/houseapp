@@ -33,7 +33,7 @@ class AddTodoController extends GetxController{
     final eventJsonList = prefs.getStringList('event_list');
     if (eventJsonList != null) {
       eventList.clear();
-      eventList.addAll(eventJsonList.map((userJson) => EventModel.fromJson(jsonDecode(userJson))));
+      eventList.addAll(eventJsonList.map((eventJson) => EventModel.fromJson(jsonDecode(eventJson))));
     }
     update();
   }
