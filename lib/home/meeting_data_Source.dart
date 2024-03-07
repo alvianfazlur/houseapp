@@ -14,6 +14,9 @@ class MeetingDataSource extends CalendarDataSource {
   DateTime getStartTime(int index) {
     return appointments![index].date;
   }
+  DateTime getEndTime(int index) {
+    return appointments![index].date;
+  }
 
   @override
   Color getColor(int index) {

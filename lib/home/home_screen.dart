@@ -57,6 +57,7 @@ class HomeScreen extends GetView<HomeScreenController> {
                 ),
                 CalendarWidgets(controller: controller),
                 Container(
+                  margin: EdgeInsets.only(top: 20),
                     child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

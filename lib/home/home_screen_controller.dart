@@ -35,19 +35,31 @@ class HomeScreenController extends GetxController{
     displayEvent = eventList;
     update();
   }
+  Future<void> saveEvent() async {
+    final eventJsonList = eventList.map((event) => jsonEncode(event.toJson())).toList();
+    await prefs.setStringList('event_list', eventJsonList);
+  }
 
   List<Meeting> getDataSource() {
     final List<Meeting> meetings = [];
 
     final DateTime today = DateTime.now();
 
-    displayEvent.forEach((event) {
+    eventList.forEach((event) {
       DateTime date = DateTime.parse(event.date);
       Color backgroundColor = date.isBefore(today) ? Colors.red : const Color(0xFF0F8644);
-      meetings.add(Meeting(event.title, date, backgroundColor, true));
+      meetings.add(Meeting(event.title, date, backgroundColor, true, date));
     });
 
     return meetings;
   }
+
+  Future<void> deleteTodo(EventModel event) async{
+    int index = eventList.indexOf(event);
+    eventList.removeAt(index);
+    await saveEvent();
+    getDataSource();
+    update();
+}
 
 }
